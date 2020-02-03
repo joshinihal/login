@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LOGIN</title>
+  <link >
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  
+  </script>
+
+
+
+  <style>
+
+input { 
+    text-align: center; 
+}
+  .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+.text-center{
+  text-align: center;
+
+}
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+div {width:200px;
+    height:100px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-100px;
+    margin-top:-120px;
+}
+body{
+    background-color: beige;
+}
+input{
+    margin-left: -50px;
+    height: 50px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #6e6e6e;
+  background-color: transparent;
+    
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+#btn-submit{
+    text-align: center;
+    color: black;
+    margin-left: 55px;
+    width: 100px;
+border: 1px solid #6e6e6e;
+  background-color: orangered;}
+  </style>
+</head>
+
+<body>
+  <span style="display: flex; justify-content: center; margin-top: 200px; margin-bottom: 50%; margin-left: 5px;">
+                <img  src="" style="width: 20em; margin-top: -40px;" alt="user image">
+            </span>
+            
+                <div class="Login">
+                  <span >{% if regsuccess== true%}
+                    <h3 style="margin-left: 50px; margin-top: 30%; margin-bottom: -30px">Successfully Registered. </h3>
+                    {%endif%}
+              </span>
+            <title>User Login</title>
+            <h2 style="text-align: center; margin-top: 50px ;">LOGIN</h2>
+            <p>
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <ul class=flashes>
+                    {% for message in messages %}
+                      <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endwith %}
+            </p>
+            
+            <form method="post" action="/loggedin">
+                <dl>
+                    <p>
+                        <input  name="inputEmail" value="" type="text" placeholder="Email" required>
+                    </p>
+                    <p>
+                        <input name="inputPassword" value="" type="password" placeholder="Password" autocomplete="off" required>
+                    </p>
+                </dl>
+                <p>
+                    <input id="btn-submit" type="submit" value="Submit">
+                </p>
+            </form>
+            <a href="/register" style="margin-left: 43px">Register an account</a>
+        </div>
+    
+
+
+    </body>
+           
+</body>
+
+</html>
